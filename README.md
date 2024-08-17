@@ -7,6 +7,7 @@ A number of book pages containing such illustrations (digitized in the project) 
 Amongst them are alchemical instruments, in which I am particularly intersted.
 
 To make the data usable for computer vision (specifically object detection), the locations of the objects on the images need to be specified in a usable image annotation format (such as MS COCO) so they can be used to train machine learning algorithms.
+
 To make that possible, this script allows me (and you) to select a number of those categories, then the links to all images tagged with this category will be scraped from the webpage and later downloaded.
 
 ## This script
@@ -23,6 +24,8 @@ Finally, it will use the deduplicated csv file to download the images using wget
 
 ## Usage recommendations 
 I recommend trying out the script using a category that only contains a few images (such as 'cupel'), then delete all files that were created by the script (not the categories csv but the log, the other csvs and the folders with the downloaded images). This isn't strictly necessary but may prevent confusion and duplicated downloads.
+
 My goal was to only download the least amount of images necessary. That's why it makes sense that after you have done the test run, you select all the categories you want and download them in one go (that way deduplication will be the most effective, saving you from unnecessarily downloading some images multiple times). 
 The deduplicated csv file still documents all the categories it was tagged with for your future reference. 
+
 Success or any problems are logged in the log and the terminal. 
