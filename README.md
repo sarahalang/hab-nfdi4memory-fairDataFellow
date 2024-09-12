@@ -4,7 +4,7 @@ This repo contains my work on annotating images from https://alchemie.hab.de/bil
 ## The data and what to use it for 
 HAB's alchemy portal (https://alchemie.hab.de) offers IconClass categories extended specifically to tag alchemy images. 
 A number of book pages containing such illustrations (digitized in the project) were tagged using those categories.
-Amongst them are alchemical instruments, in which I am particularly intersted.
+Amongst them are alchemical instruments, in which I am particularly interested.
 
 To make the data usable for computer vision (specifically object detection), the locations of the objects on the images need to be specified in a usable image annotation format (such as MS COCO) so they can be used to train machine learning algorithms.
 
@@ -43,7 +43,7 @@ Run as follows:
 ```
 python3 extract-hab-metadata-from-image-links.py
 ```
-I set the input to be the file 'deduped_image_links.csv' (outputted by the script above) and the output will be named 'output_hab_imgs_metadata.csv'. However, you can adapt this to your own needs in the "Run the script" section of the code (towards the very end, denoted by a comment). 
+I set the input to be the file `deduped_image_links.csv` (outputted by the script above) and the output will be named `output_hab_imgs_metadata.csv`. However, you can adapt this to your own needs in the "Run the script" section of the code (towards the very end, denoted by a comment). 
 
 The script will achieve the following things: 
 - **Transforms image links**: Converts image links into viewer links and METS XML links. These make it easier for you to click into the book, as the links we saved before only lead to the downloadable image from where there is no way to directly look though the book (in case you need context or need to find out what book the image is actually from). 
@@ -83,14 +83,14 @@ pip install requests beautifulsoup4 lxml
 ```
 
 ## Sorting the book metadata output by pages included
-This script will use the output of the last one and only reduce it so that there's only one line for each book/signature included but this line has a list of all the pages from this book that were included in the dataset. 
+This script will just use the output of the last (no more scraping) and reduce it so that there's only one line for each book/signature included but this line has a list of all the pages from this book that were included in the dataset. 
 
 Run as follows: 
 ```
 python3 get-hab-img-metadata-for-dataset.py
 ```
 The naming of the last two python scripts is a little bit confusing, sorry about that. They need to be run in the order they are listed here.
-I set the input to be the file 'output_hab_imgs_metadata.csv' (outputted by the script above) and the output will be named 'hab-dataset-img-metadata.csv'. However, you can adapt this to your own needs in the "Run the script" section of the code (towards the very end, denoted by a comment). 
+I set the input to be the file `output_hab_imgs_metadata.csv` (outputted by the script above) and the output will be named `hab-dataset-img-metadata.csv`. However, you can adapt this to your own needs in the "Run the script" section of the code (towards the very end, denoted by a comment). 
 
 The output can be imported in a sheet software of your choice, however, please note that LibreOffice for some reason omits page numbers from entries where there is only one page number. Initially, I suspected this was due to different CSV quoting options (one single page is treated like an integer and the field is not in double quotes in the CSV output, whereas the lines with multiple comma-separated page numbers are in quotes) but this didn't make a difference. The error does not appear when importing to GoogleSheets, for instance, so I didn't fix it - but please be aware of this caveat. 
 Once it's imported, you can fill in the gaps in the metadata using the library system. 
