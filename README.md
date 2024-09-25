@@ -190,9 +190,11 @@ and save the result of that deduplication process in a CSV file (`deduped_image_
 
 ### A Few Image Examples for MS COCO and YOLOv8 annotation formats from this dataset
 A visual example demonstrating a single annotation in MS COCO format.
+
 ![annotation in MS COCO format](example-of-msCoco-for-one-annotation.png)
 
 An illustration showcasing the categories used in the MS COCO dataset format.
+
 ![dataset categories in MS COCO format](example-of-mscoco-categories.png)
 
 
