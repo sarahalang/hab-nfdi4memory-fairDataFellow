@@ -106,9 +106,6 @@ The output can be imported in a sheet software of your choice, however, please n
 Once it's imported, you can fill in the gaps in the metadata using the library system. 
 
 ---
-Here is a draft for the documentation of the dataset based on the information you provided:
-
----
 
 ## Dataset Documentation: Alchemical Laboratory Object Detection Annotations (YOLO8 & MS COCO Formats)
 
