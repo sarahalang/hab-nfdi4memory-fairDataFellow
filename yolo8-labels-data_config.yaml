@@ -1,0 +1,18 @@
+colors:
+- [107, 214, 200]
+- [238, 58, 58]
+- [248, 231, 28]
+- [184, 171, 22]
+- [74, 144, 226]
+- [245, 166, 35]
+- [191, 212, 104]
+- [164, 53, 208]
+- [82, 199, 138]
+- [74, 74, 74]
+- [117, 209, 130]
+- [208, 2, 120]
+names: [ampullae, animal, cucurbitae, cucurbitae-ambix, ollae, cucurbitae-retorte,
+  cucurbitae-rosenhut, furnace, human, mineral-metal, plant, other-equipment]
+nc: 12
+train: ../299528_253565_Alchemische-Objekte_002/images/train
+val: ../299528_253565_Alchemische-Objekte_002/images/val
