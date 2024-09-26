@@ -171,7 +171,8 @@ The annotations cover 12 categories of alchemical objects:
 - `deduped_image_links.csv` is deduplicated version of the `all_image_links.csv`, ensuring that each image is only listed once (it may have been in the initial list more than once because that went by annotations and each image could have more than class assigned in the HAB IconClass annotation). 
 - `hab-alchemical-categories-links.csv` contains links to the relevant categories of different types of alchemical objects in the HAB IconClass. You can adapt the scraping script to include as many of those as you wish. 
 - `hab-dataset-img-metadata.csv` is the final metadata file for the dataset, containing bibliographical info for each book in the dataset (as far as the METS files provided at the time of downloading).
-- `output_hab_imgs_metadata.csv` contains the book metadata output by image/page included in the dataset. 
+- `output_hab_imgs_metadata.csv` contains the book metadata output by image/page included in the dataset.
+- `CHR2023-corpus-train.csv` and `CHR2023-corpus-eval.csv` contain the metadata for the images included in [the original paper](https://ceur-ws.org/Vol-3558/paper342.pdf) This information would be necessary if you wanted to recreate that image corpus to use the annotations of the full dataset in `ms-coco-full-dataset.zip` and `yolo-train-full-dataset.zip`. 
 
 ## Python Scripts (Metadata Extraction & Image Scraping)
 
@@ -186,7 +187,9 @@ and save the result of that deduplication process in a CSV file (`deduped_image_
 ### The files
 - `hab-achemieobjekte-msCoco.json` contains the object annotations in MS COCO format, which are more human-readable than the YOLO format.
 - `yolo8-labels-train.zip` is the train folder of YOLOv8 formatted annotations I explained above (but it had to be zipped for upload here). 
-- `yolo8-labels-data_config.yaml` is the configuration file for the YOLOv8 annotations. The configuration file lists the annotation classes, colour information, and paths to the `train` and `val` datasets. Although paths to these datasets are specified, you need to download the images yourself, as they are not included in this repository (and already archived in HAB's digital library). Look up how to properly structure your data so it's ready for actually using the algorithms. 
+- `yolo8-labels-data_config.yaml` is the configuration file for the YOLOv8 annotations. The configuration file lists the annotation classes, colour information, and paths to the `train` and `val` datasets. Although paths to these datasets are specified, you need to download the images yourself, as they are not included in this repository (and already archived in HAB's digital library). Look up how to properly structure your data so it's ready for actually using the algorithms.
+- `yolo-train-full-dataset.zip` contains the full dataset (not just the data from HAB but also from the books in [our 2023 CHR publication](https://ceur-ws.org/Vol-3558/paper342.pdf)). The books used are cited there including the link to the facsimiles we used and the images are named accordingly but it will likely be more work to assemble all the required images. To make it easier for you to write a download script to get those books and images, I have included two csv files `CHR2023-corpus-train.csv` and `CHR2023-corpus-eval.csv` with the relevant metadata. 
+- `ms-coco-full-dataset.zip` same as above but in MS COCO
 
 ### A Few Image Examples for MS COCO and YOLOv8 annotation formats from this dataset
 A visual example demonstrating a single annotation in MS COCO format.
